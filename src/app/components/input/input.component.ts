@@ -1,16 +1,17 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { OutputComponent } from "../output/output.component";
 
 @Component({
-  selector: 'app-input',
-  standalone: true,
-  imports: [],
-  templateUrl: './input.component.html',
-  styleUrl: './input.component.scss'
+    selector: 'app-input',
+    standalone: true,
+    templateUrl: './input.component.html',
+    styleUrl: './input.component.scss',
+    imports: [OutputComponent]
 })
 export class InputComponent {
-  @Input() inputData: any;
-  @Output() outputEvent: EventEmitter<any> = new EventEmitter<any>();
-  
-  // Emit event
-  this.outputEvent.emit(data);
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  NewItem(value: string) {
+    this.newItemEvent.emit(value);
+  }
 }

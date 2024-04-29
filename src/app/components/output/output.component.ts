@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { InputComponent } from "../input/input.component";
 
 @Component({
@@ -9,5 +9,6 @@ import { InputComponent } from "../input/input.component";
     imports: [InputComponent]
 })
 export class OutputComponent {
-
+    @Input() item = '';
+    @Input() itemTwo = '';
 }

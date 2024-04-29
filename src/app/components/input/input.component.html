@@ -1,2 +1,6 @@
-<p>input works!</p>
-<button (click)="emitEvent()">Send Event</button>
+<div class="container">
+    <!-- <mat-form-field> -->
+        <input matInput type="text" placeholder="Enter something" #newItem>
+      <!-- </mat-form-field> -->
+    <button (click)="NewItem(newItem.value)">Add new item</button>
+</div>
